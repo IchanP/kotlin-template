@@ -7,4 +7,5 @@ This is a template for a Kotlin/Gradle program, setup to work with Ktlint and De
 ### Required VSC extensions
 
 ![Kotlin](https://marketplace.visualstudio.com/items?itemName=fwcd.kotlin)
+
 ![Kotlin Language](https://marketplace.visualstudio.com/items?itemName=mathiasfrohlich.Kotlin)
