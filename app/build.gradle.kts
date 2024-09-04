@@ -21,14 +21,14 @@ repositories {
 }
 
 dependencies {
-    // Use the Kotlin JUnit 5 integration.
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
+    // Kotlin test library
+    testImplementation("org.jetbrains.kotlin:kotlin-test:1.9.0")
 
-    // Use the JUnit 5 integration.
+    // Kotlin JUnit 5 integration
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit5:1.9.0")
+
+    // JUnit 5 engine
     testImplementation("org.junit.jupiter:junit-jupiter-engine:5.9.1")
-
-    // This dependency is used by the application.
-    implementation("com.google.guava:guava:31.1-jre")
     // Use the kotlin standar dlibrary for linting
     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.3")
 }
@@ -48,7 +48,19 @@ detekt {
 
 application {
     // Define the main class for the application.
-    mainClass.set("App.AppKt")
+    mainClass.set("app.AppClassKt")
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(20))
+    }
+}
+
+kotlin {
+    jvmToolchain {
+        (this as JavaToolchainSpec).languageVersion.set(JavaLanguageVersion.of(20))
+    }
 }
 
 tasks.named<Test>("test") {
