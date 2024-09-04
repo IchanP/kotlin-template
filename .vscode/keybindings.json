@@ -1,0 +1,9 @@
+[
+    {
+      "key": "shift+alt+f",     // You can customize the hotkey as you prefer
+      "command": "workbench.action.tasks.runTask",
+      "args": "Ktlint Format",
+      "when": "editorLangId == kotlin"
+    }
+  ]
+  
